@@ -1,0 +1,47 @@
+<div class="box-formulario">
+
+    <div class="formulario">
+
+        <div class="title-form">
+            <h1>CADASTRE-SE</h1>
+        </div>
+
+        <form action="#" method="post">
+
+            <span>
+                <input type="text" #nome value="{{ usuario?.nome }}" class="input-balao-up" id="nome" name="nome" placeholder="Usuário" autocomplete="off"
+                    required="" />
+                <label for="nome"> <i class="icon icon-user-outline"></i> </label>
+            </span>
+
+            <span>
+                <input type="password" #senha value="{{ usuario?.senha }}" class="input-balao-up" id="senha" name="senha" placeholder="Senha"
+                    autocomplete="off" required="" />
+                <label for="email"> <i class="icon icon-mail-3"></i> </label>
+            </span>
+
+            <span>
+                <input type="text" #cpf value="{{ usuario?.cpf }}" maxlength="11" class="input-balao-up" id="cpf" name="cpf" placeholder="CPF - 123.456.789-10" autocomplete="off"
+                    required="" />
+                <label for="nome"> <i class="icon icon-user-outline"></i> </label>
+            </span>
+
+            <span>
+                <input type="date" #dataNascimento value="{{ usuario?.dataNascimento }}" class="input-balao-up" id="data"
+                    autocomplete="off" required="" />
+                <label for="assunto"> <i class="icon icon-info"></i> </label>
+            </span>
+
+
+            <div class="box-btn">
+
+                <input type="button" value="Cadastrar" (click)="postUsuario(nome.value, senha.value, cpf.value, dataNascimento.value)" *ngIf="!usuario" class="btn-envia zoom-shadow">
+                <input type="button" value="Editar" class="btn" (click)="putUsuario(nome.value, senha.value, cpf.value, dataNascimento.value, usuario?.id)" *ngIf="usuario" class="btn-envia zoom-shadow">
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

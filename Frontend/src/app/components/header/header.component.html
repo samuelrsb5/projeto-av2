@@ -1,0 +1,20 @@
+<nav class="nav-bar">
+  <figure class="logo-container">
+    <img class="logo" src="../../../assets/img/logoLoja.png" alt="">
+  </figure>
+  <nav class="menu">
+    <a routerLink="/home" class="item" routerLinkActive="active">Home</a>
+    <div class="filter">
+      <a class="item" (click)="toggleMenu()">Filter</a>
+      <ul *ngIf="menuVisible" class="dropdown-menu">
+        <li (click)="selectCategory('all')">Tudo</li>
+        <li (click)="selectCategory('electronics')">Eletrônicos</li>
+        <li (click)="selectCategory('jewelery')">Bijuterias</li>
+        <li (click)="selectCategory('men\'s clothing')">Moda Masculina</li>
+        <li (click)="selectCategory('women\'s clothing')">Moda Feminina</li>
+      </ul>
+    </div>
+    <a routerLink="/cadastrar" class="item" routerLinkActive="active">Cadastro</a>
+    <a routerLink="/listar" class="item" routerLinkActive="active">Listar</a>
+  </nav>
+</nav>

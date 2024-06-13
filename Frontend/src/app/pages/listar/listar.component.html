@@ -1,0 +1,32 @@
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Senha</th>
+                <th>CPF</th>
+                <th>Data de Nascimento</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let usuario of usuarios; let i = index">
+                <td #id>{{usuario.id}}</td>
+                <td>{{usuario.nome}}</td>
+                <td>{{usuario.senha}}</td>
+                <td>{{usuario.cpf | cpf}}</td>
+                <td>{{usuario.dataNascimento | date: 'd/M/y'}}</td>
+                <td (click)="deleteUsuario(id.innerHTML)">X</td>
+            </tr>
+    
+            <tr *ngFor="let i of [].constructor(10 - usuarios.length)">
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+        </tbody>
+    </table>

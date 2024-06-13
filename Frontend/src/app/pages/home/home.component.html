@@ -1,0 +1,8 @@
+<div class="produtos" *ngIf="produtos">
+    <div class="produto-single" *ngFor="let produto of produtos">
+      <img src="{{produto.image}}" />
+      <p></p>
+      <a id="comprar" href="#">Comprar</a>
+      <button id="add-carrinho">Adicionar ao Carrinho</button>
+    </div>
+</div>
